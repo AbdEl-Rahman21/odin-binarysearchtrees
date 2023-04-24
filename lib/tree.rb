@@ -7,7 +7,7 @@ class Tree
     @root = build_tree(array.uniq.sort)
   end
 
-  def pretty_print(node = root, prefix = '', is_left: true)
+  def pretty_print(node = root, prefix = '', is_left = true)
     if node.right
       pretty_print(node.right, "#{prefix}#{is_left ? '│   ' : '    '}", false)
     end
@@ -150,7 +150,7 @@ class Tree
   end
 
   def rebalance
-    build_tree(inorder)
+    self.root = build_tree(inorder)
   end
 
   private
